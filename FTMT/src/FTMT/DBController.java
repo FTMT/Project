@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * DBController.java
  * 
- * @author wcooper001
+ * @author FTMT
  * @version 3/12/19
  */
 public class DBController
@@ -68,6 +68,20 @@ public String getPassword(String username)
     return password;
   }
   
+
+
+public int addUniversity(University univ)
+{
+	
+	return dbLibrary.university_addUniversity(univ.name,univ.state,univ.location,univ.control,univ.numStudents,
+			univ.percFemales,univ.satVerbal,univ.satMath,
+			univ.expenses,univ.percAid, univ.numApply, univ.percAdmit,univ.percEnrolled,
+			univ.acadScale,univ.socialScale,univ.qualLife);
+	
+}
+
+
+
   /**
  * @param username
  * @return String[]
@@ -174,10 +188,11 @@ public char getStatus(String username)
            univ = new University(this.schools[i][0], this.schools[i][1], this.schools[i][2], this.schools[i][3],
           		 Integer.parseInt(this.schools[i][4]), Double.parseDouble(this.schools[i][5]), Double.parseDouble(this.schools[i][6]), 
           		 Double.parseDouble(this.schools[i][7]), Double.parseDouble(this.schools[i][8]),
-          		 Double.parseDouble(this.schools[i][9]), Double.parseDouble(this.schools[i][10]), Double.parseDouble(this.schools[i][11]), 
-          		 Integer.parseInt(this.schools[i][12]), Integer.parseInt(this.schools[i][13]), Integer.parseInt(this.schools[i][14]));
+          		 Double.parseDouble(this.schools[i][9]), Integer.parseInt(this.schools[i][10]),Double.parseDouble(this.schools[i][11]), Double.parseDouble(this.schools[i][12]), 
+          		 Integer.parseInt(this.schools[i][13]), Integer.parseInt(this.schools[i][14]), Integer.parseInt(this.schools[i][15]));
            results.add(univ);
          }
+        
        }
        i++;
      }
@@ -208,11 +223,11 @@ public char getStatus(String username)
      {
        if (state.equals(this.schools[j][1]))
        {
-         univ = new University(this.schools[j][0], this.schools[j][1], this.schools[j][2], this.schools[j][3],
-        		 Integer.parseInt(this.schools[j][4]), Double.parseDouble(this.schools[j][5]), Double.parseDouble(this.schools[j][6]), 
-        		 Double.parseDouble(this.schools[j][7]), Double.parseDouble(this.schools[j][8]),
-        		 Double.parseDouble(this.schools[j][9]), Double.parseDouble(this.schools[j][10]), Double.parseDouble(this.schools[j][11]), 
-        		 Integer.parseInt(this.schools[j][12]), Integer.parseInt(this.schools[j][13]), Integer.parseInt(this.schools[j][14]));
+    	   univ = new University(this.schools[j][0], this.schools[j][1], this.schools[j][2], this.schools[j][3],
+            		 Integer.parseInt(this.schools[j][4]), Double.parseDouble(this.schools[j][5]), Double.parseDouble(this.schools[j][6]), 
+            		 Double.parseDouble(this.schools[j][7]), Double.parseDouble(this.schools[j][8]),
+            		 Double.parseDouble(this.schools[j][9]), Integer.parseInt(this.schools[j][10]),Double.parseDouble(this.schools[j][11]), Double.parseDouble(this.schools[j][12]), 
+            		 Integer.parseInt(this.schools[j][13]), Integer.parseInt(this.schools[j][14]), Integer.parseInt(this.schools[j][15]));
          results.add(univ);
          k++;
        }
@@ -230,10 +245,10 @@ public char getStatus(String username)
      for (int j = 0; j < this.schools.length; j++)
      {
     	 univ = new University(this.schools[j][0], this.schools[j][1], this.schools[j][2], this.schools[j][3],
-        		 Integer.parseInt(this.schools[j][4]), Double.parseDouble(this.schools[j][5]), Double.parseDouble(this.schools[j][6]), 
-        		 Double.parseDouble(this.schools[j][7]), Double.parseDouble(this.schools[j][8]),
-        		 Double.parseDouble(this.schools[j][9]), Double.parseDouble(this.schools[j][10]), Double.parseDouble(this.schools[j][11]), 
-        		 Integer.parseInt(this.schools[j][12]), Integer.parseInt(this.schools[j][13]), Integer.parseInt(this.schools[j][14]));
+          		 Integer.parseInt(this.schools[j][4]), Double.parseDouble(this.schools[j][5]), Double.parseDouble(this.schools[j][6]), 
+          		 Double.parseDouble(this.schools[j][7]), Double.parseDouble(this.schools[j][8]),
+          		 Double.parseDouble(this.schools[j][9]), Integer.parseInt(this.schools[j][10]),Double.parseDouble(this.schools[j][11]), Double.parseDouble(this.schools[j][12]), 
+          		 Integer.parseInt(this.schools[j][13]), Integer.parseInt(this.schools[j][14]), Integer.parseInt(this.schools[j][15]));
     	 
        list.add(univ);
      }

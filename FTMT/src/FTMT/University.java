@@ -15,7 +15,7 @@ public class University
 	public String toString() {
 		return "University [name=" + name + ", state=" + state + ", location=" + location + ", control=" + control
 				+ ", numStudents=" + numStudents + ", percFemales=" + percFemales + ", satVerbal=" + satVerbal
-				+ ", satMath=" + satMath + ", expenses=" + expenses + ", percAid=" + percAid + ", percAdmit="
+				+ ", satMath=" + satMath + ", expenses=" + expenses + ", percAid=" + percAid + ", numApply=" + numApply + ", percAdmit="
 				+ percAdmit + ", percEnrolled=" + percEnrolled + ", acadScale=" + acadScale + ", socialScale="
 				+ socialScale + ", qualLife=" + qualLife + "]";
 	}
@@ -35,11 +35,12 @@ String name;
   int acadScale;
   int socialScale;
   int qualLife;
+  int numApply;
   
   String [] info = new String[15];
   
   public University(String name, String state, String location, String control, int numStudents, double percFemales, double satVerbal,
-                    double satMath, double expenses, double percAid, double percAdmit, double percEnrolled, 
+                    double satMath, double expenses, double percAid, int numApply, double percAdmit, double percEnrolled, 
                     int acadScale, int socialScale, int qualLife)
   {
     this.name = name;
@@ -57,6 +58,7 @@ String name;
     this.acadScale = acadScale;
     this.socialScale = socialScale;
     this.qualLife = qualLife;
+    this.numApply = numApply;
   }
   
   public University() {
@@ -75,11 +77,12 @@ public String[] getUniversityInfo()
     info[7] = Double.toString(this.satMath);
     info[8] = Double.toString(this.expenses);
     info[9] = Double.toString(this.percAid);
-    info[10] = Double.toString(this.percAdmit);
-    info[11] = Double.toString(this.percEnrolled);
-    info[12] = Integer.toString(this.acadScale);
-    info[13] = Integer.toString(this.socialScale);
-    info[14] = Integer.toString(this.qualLife);
+    info[10] = Integer.toString(this.numApply);
+    info[11] = Double.toString(this.percAdmit);
+    info[12] = Double.toString(this.percEnrolled);
+    info[13] = Integer.toString(this.acadScale);
+    info[14] = Integer.toString(this.socialScale);
+    info[15] = Integer.toString(this.qualLife);
     
     return info;
   }
